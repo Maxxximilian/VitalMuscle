@@ -211,4 +211,11 @@ app.get('/api/verify-session', async (req, res) => {
   } catch { res.status(400).json({ paid: false }) }
 })
 
-app.listen(PORT, () => console.log(`✅ VitalMuscle Server läuft auf http://localhost:${PORT}`))
+// Static files (production build)
+const DIST = join(__dir, 'dist')
+if (existsSync(DIST)) {
+  app.use(express.static(DIST))
+  app.get('*', (_req, res) => res.sendFile(join(DIST, 'index.html')))
+}
+
+app.listen(PORT, () => console.log(`✅ VitalMuscle Server läuft auf Port ${PORT}`))
