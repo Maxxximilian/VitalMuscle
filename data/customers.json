@@ -1,0 +1,101 @@
+[
+  {
+    "token": "8db5a9ea-f613-4f99-a101-bf17f0c6c0b2",
+    "email": "maxribcke3@gmail.com",
+    "planId": "3m",
+    "commitment": "daily",
+    "planName": "VitalMuscle Empfohlen",
+    "paidAt": "2026-06-20T19:16:19.455Z",
+    "sessionId": "cs_test_a13rnYpB2NzebXFv1Ap4frxVDj6D7FKuUcnifhpBzdux5o73i4V1Nt34aE"
+  },
+  {
+    "token": "132cb747-2770-4ce9-a938-9e79b1e9488e",
+    "email": "maxribcke3@gmail.com",
+    "planId": "6m",
+    "commitment": "daily",
+    "planName": "VitalMuscle Bester Wert",
+    "paidAt": "2026-06-20T19:19:33.912Z",
+    "sessionId": "cs_test_a1cVL9gEQ1Xyd24TGyzMORrgD0RO8m1ReSr1QdZKyn2xJyGW4VpbZxeLSo"
+  },
+  {
+    "token": "32debdfc-ac09-4ff3-9e07-e7092769acf3",
+    "email": "maxribcke3@gmail.com",
+    "planId": "6m",
+    "commitment": "daily",
+    "planName": "VitalMuscle Bester Wert",
+    "paidAt": "2026-06-20T19:22:37.910Z",
+    "sessionId": "cs_test_a1cVL9gEQ1Xyd24TGyzMORrgD0RO8m1ReSr1QdZKyn2xJyGW4VpbZxeLSo"
+  },
+  {
+    "token": "dec63b26-97ca-41a3-9692-61d4eb861ca5",
+    "email": "maxadzabe@gmail.com",
+    "planId": "3m",
+    "commitment": "daily",
+    "planName": "VitalMuscle Empfohlen",
+    "paidAt": "2026-06-20T19:36:35.456Z",
+    "sessionId": "cs_test_a11dSodwpepxEpTZbQD9TJS0r4kpDB7O7Ow96NXjYztv6bSTqHL47wFfMN"
+  },
+  {
+    "token": "41a03c3b-09c8-4cdc-bbea-2bdb4d28fac5",
+    "email": "maxadzabe@gmail.com",
+    "planId": "6m",
+    "commitment": "daily",
+    "planName": "VitalMuscle Bester Wert",
+    "paidAt": "2026-06-20T19:52:23.587Z",
+    "sessionId": "cs_test_a17gIccJdbIJphA599jVUO3cQyyld5365FdH2o90ozOIwptiqCgVJZTHPJ"
+  },
+  {
+    "token": "d7260a24-4d83-465d-9fcd-e76fe7645ce9",
+    "email": "maxadzabe@gmail.com",
+    "planId": "6m",
+    "commitment": "daily",
+    "planName": "VitalMuscle Bester Wert",
+    "paidAt": "2026-06-25T19:52:29.274Z",
+    "sessionId": "cs_test_a1USP74Ks16yZKBfXtIRo16CfHcPOfczeMrKnZaPHBQbg35K8urm2VZAcK"
+  },
+  {
+    "token": "988308de-cb0f-4d73-b0f7-12bc9065d818",
+    "email": "maxadzabe@gmail.com",
+    "planId": "3m",
+    "commitment": "daily",
+    "planName": "VitalMuscle Empfohlen",
+    "paidAt": "2026-06-26T21:57:18.871Z",
+    "sessionId": "cs_test_a1rRgCooA6AZaWUKE16HMJijXb8b19ambd1hTeTuZfoxfm5zZstKlR3Dpn"
+  },
+  {
+    "token": "5a49f61a-9935-4bf7-b5c3-0b0b8a30f819",
+    "email": "maxadzabe@gmail.com",
+    "planId": "6m",
+    "commitment": "daily",
+    "planName": "VitalMuscle Bester Wert",
+    "paidAt": "2026-06-26T22:10:59.951Z",
+    "sessionId": "cs_test_a1k0n9bPiY2VXPJsmDyMkO868gr2CblRKPc8l2UlLyt3tpgryeDmn72od1"
+  },
+  {
+    "token": "e3780fca-9296-4a45-9d77-f37078e6eca6",
+    "email": "maxadzabe@gmail.com",
+    "planId": "6m",
+    "commitment": "daily",
+    "planName": "VitalMuscle Bester Wert",
+    "paidAt": "2026-06-26T22:17:34.981Z",
+    "sessionId": "cs_test_a1geq7pupniMKUungOHJrVkezibFxGUF2O88uA47JLioyo0HyoxjOpQAz1"
+  },
+  {
+    "token": "19b1d1be-8db9-4506-af37-0faa4101b33d",
+    "email": "maxadzabe@gmail.com",
+    "planId": "6m",
+    "commitment": "daily",
+    "planName": "VitalMuscle Bester Wert",
+    "paidAt": "2026-06-26T22:30:47.618Z",
+    "sessionId": "cs_test_a1oYW7jYaOlIJe29i5mfx9sWjKuRojU1U1BtcDnxei1wRvpWolZa6RPch0"
+  },
+  {
+    "token": "28197cfe-ab24-4d5e-8a77-f543012a0d6d",
+    "email": "maxadzabe@gmail.com",
+    "planId": "3m",
+    "commitment": "daily",
+    "planName": "VitalMuscle Empfohlen",
+    "paidAt": "2026-06-26T22:53:14.928Z",
+    "sessionId": "cs_test_a1xTPDGbP5PXvVvsYJSpzUG3c0AcTjMBHspg2NpEgtDEQDxibEPuxzNSX3"
+  }
+]
