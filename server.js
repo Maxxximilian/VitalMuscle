@@ -114,7 +114,9 @@ function buildEmail(accessUrl, planName, planId) {
 }
 
 // ── Middleware ─────────────────────────────────────────────────────────────
-app.use(cors({ origin: SITE }))
+app.use(cors())
+
+app.get('/health', (_req, res) => res.json({ ok: true }))
 
 // Webhook braucht raw body – MUSS vor express.json() kommen
 app.post('/api/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
@@ -218,4 +220,4 @@ if (existsSync(DIST)) {
   app.get('*', (_req, res) => res.sendFile(join(DIST, 'index.html')))
 }
 
-app.listen(PORT, () => console.log(`✅ VitalMuscle Server läuft auf Port ${PORT}`))
+app.listen(PORT, '0.0.0.0', () => console.log(`✅ VitalMuscle Server läuft auf Port ${PORT}`))
