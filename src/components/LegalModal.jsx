@@ -19,7 +19,7 @@ Hagenbeckstraße 60, 22527 Hamburg</p>
 
 <h2>Umsatzsteuer</h2>
 <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br/>
-[USt-IdNr. nach Erhalt beim Finanzamt eintragen]</p>
+DE369012103</p>
 
 <h2>Streitschlichtung</h2>
 <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
