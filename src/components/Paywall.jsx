@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Logo from './Logo'
 
 const PLANS = [
   { id: '1m', duration: '1 Monat',  label: 'Basis',        price: '24,99 €', note: 'Einmalzahlung · kein Abo · inkl. MwSt.', badge: null,            popular: false },
@@ -87,7 +88,8 @@ export default function Paywall({ answers, onLegal }) {
              onError={e => { e.target.parentElement.style.display = 'none' }} />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent flex items-end p-5">
           <div>
-            <p className="text-white font-extrabold text-xl">Dein VitalMuscle ist fertig!</p>
+            <div className="mb-1"><Logo size="sm" light /></div>
+            <p className="text-white font-extrabold text-xl">Dein Plan ist fertig!</p>
             <p className="text-white/80 text-sm mt-0.5">Maßgeschneidert für Männer ab 35</p>
           </div>
         </div>

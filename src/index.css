@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'GlacialIndifference';
+  src: url('/fonts/GlacialIndifference-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GlacialIndifference';
+  src: url('/fonts/GlacialIndifference-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
 @layer base {
   html { @apply font-sans; }
   body { @apply bg-gray-50 text-gray-900 antialiased; }

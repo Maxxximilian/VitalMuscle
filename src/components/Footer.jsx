@@ -1,8 +1,10 @@
+import Logo from './Logo'
+
 export default function Footer({ onLegal }) {
   return (
     <footer className="bg-white border-t border-gray-100 py-5 px-4 mt-8">
       <div className="max-w-lg mx-auto text-center">
-        <p className="text-xs font-bold text-gray-500 mb-2">💪 VitalMuscle</p>
+        <div className="flex justify-center mb-2"><Logo size="sm" /></div>
         <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
           {[
             ['impressum',  'Impressum'],
