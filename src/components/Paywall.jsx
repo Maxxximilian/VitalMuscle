@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Logo from './Logo'
+import { pixelInitCheckout } from '../utils/pixel'
 
 const PLANS = [
   { id: '1m', duration: '1 Monat',  label: 'Basis',        price: '24,99 €', note: 'Einmalzahlung · kein Abo · inkl. MwSt.', badge: null,            popular: false },
@@ -50,6 +51,8 @@ export default function Paywall({ answers, onLegal }) {
   const [loading, setLoading]     = useState(false)
   const [error, setError]         = useState(null)
   const [widerrufOk, setWiderrufOk] = useState(false)
+
+  useEffect(() => { pixelInitCheckout() }, [])
 
   const body = answers.body || {}
   const cw   = body.currentWeight || 95

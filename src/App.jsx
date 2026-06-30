@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
+import { pixelViewContent, pixelPurchase } from './utils/pixel'
 import Header from './components/Header'
 import CookieBanner from './components/CookieBanner'
 import LegalModal from './components/LegalModal'
@@ -31,11 +32,18 @@ function PurchaseSuccess() {
   const [loading, setLoading]       = useState(false)
   const [granted, setGranted]       = useState(false)
 
+  const AMOUNTS = { '1m': 24.99, '3m': 44.99, '6m': 59.99 }
+
   const openNow = () => {
     setLoading(true)
     fetch(`/api/verify-session?id=${SESSION_ID}`)
       .then(r => r.json())
-      .then(d => { if (d.paid) { setPlanId(d.planId); setCommitment(d.commitment); setGranted(true) } })
+      .then(d => {
+        if (d.paid) {
+          pixelPurchase(AMOUNTS[d.planId] || 44.99)
+          setPlanId(d.planId); setCommitment(d.commitment); setGranted(true)
+        }
+      })
       .catch(() => {})
       .finally(() => setLoading(false))
   }
@@ -141,6 +149,8 @@ export default function App() {
     if (access === 'denied') return <AccessDenied />
     return <PlanApp planId={planId} commitment={commitment} />
   }
+
+  useEffect(() => { pixelViewContent() }, [])
 
   const advance      = useCallback(() => setStep(s => s + 1), [])
   const handleAnswer = useCallback((key, value) => {
