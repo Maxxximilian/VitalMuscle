@@ -34,13 +34,19 @@ function PurchaseSuccess() {
 
   const AMOUNTS = { '1m': 24.99, '3m': 44.99, '6m': 59.99 }
 
+  useEffect(() => {
+    fetch(`/api/verify-session?id=${SESSION_ID}`)
+      .then(r => r.json())
+      .then(d => { if (d.paid) pixelPurchase(AMOUNTS[d.planId] || 44.99) })
+      .catch(() => {})
+  }, [])
+
   const openNow = () => {
     setLoading(true)
     fetch(`/api/verify-session?id=${SESSION_ID}`)
       .then(r => r.json())
       .then(d => {
         if (d.paid) {
-          pixelPurchase(AMOUNTS[d.planId] || 44.99)
           setPlanId(d.planId); setCommitment(d.commitment); setGranted(true)
         }
       })
