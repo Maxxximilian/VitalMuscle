@@ -150,10 +150,9 @@ export default function App() {
     return <PlanApp planId={planId} commitment={commitment} />
   }
 
-  useEffect(() => { pixelViewContent() }, [])
-
   const advance      = useCallback(() => setStep(s => s + 1), [])
   const handleAnswer = useCallback((key, value) => {
+    if (key === 'age') pixelViewContent()
     setAnswers(prev => ({ ...prev, [key]: value }))
     setStep(s => s + 1)
   }, [])
