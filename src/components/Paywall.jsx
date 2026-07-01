@@ -78,7 +78,7 @@ export default function Paywall({ answers, onLegal }) {
   }
 
   return (
-    <div className="max-w-lg mx-auto w-full px-4 pt-0 pb-36">
+    <div className="max-w-lg mx-auto w-full px-4 pt-0 pb-0">
 
       {/* Hero */}
       <div className="relative mb-6 -mx-4">
@@ -187,6 +187,9 @@ export default function Paywall({ answers, onLegal }) {
           </details>
         ))}
       </div>
+
+      {/* Weißer Abstand passend zur Sticky Bar */}
+      <div className="h-36 bg-white -mx-4" />
 
       {/* ── Sticky CTA ── */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-2xl safe-bottom">
