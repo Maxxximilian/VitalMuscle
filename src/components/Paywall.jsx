@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Logo from './Logo'
-import { pixelInitCheckout } from '../utils/pixel'
+import { pixelInitCheckout, pixelAddToCart } from '../utils/pixel'
 
 
 const PLANS = [
@@ -60,6 +60,7 @@ export default function Paywall({ answers, onLegal }) {
   const selectedPlan = PLANS.find(p => p.id === selected)
 
   const handleCheckout = async () => {
+    pixelAddToCart(PLANS.find(p => p.id === selected)?.price)
     setLoading(true)
     setError(null)
     try {
@@ -77,7 +78,7 @@ export default function Paywall({ answers, onLegal }) {
   }
 
   return (
-    <div className="max-w-lg mx-auto w-full px-4 pt-0 pb-44">
+    <div className="max-w-lg mx-auto w-full px-4 pt-0 pb-36">
 
       {/* Hero */}
       <div className="relative mb-6 -mx-4">
