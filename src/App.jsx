@@ -190,7 +190,7 @@ export default function App() {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header step={step} progress={progress} showProgress={isQuiz} totalSteps={QUIZ_STEPS} />
       <main className="flex-1 flex flex-col">
-        <div key={step} className="animate-fade-up flex-1 flex flex-col">
+        <div key={step} className={`${step < 14 ? 'animate-fade-up' : ''} flex-1 flex flex-col`}>
           {renderScreen()}
         </div>
       </main>

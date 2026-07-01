@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Logo from './Logo'
 import { pixelInitCheckout } from '../utils/pixel'
 
+
 const PLANS = [
   { id: '1m', duration: '1 Monat',  label: 'Basis',        price: '24,99 €', note: 'Einmalzahlung · kein Abo · inkl. MwSt.', badge: null,            popular: false },
   { id: '3m', duration: '3 Monate', label: 'Empfohlen',    price: '44,99 €', note: 'Einmalzahlung · kein Abo · inkl. MwSt.', badge: '40% günstiger', popular: true  },
@@ -47,10 +48,9 @@ function PlanCard({ plan, selected, onSelect }) {
 }
 
 export default function Paywall({ answers, onLegal }) {
-  const [selected, setSelected]   = useState('3m')
-  const [loading, setLoading]     = useState(false)
-  const [error, setError]         = useState(null)
-  const [widerrufOk, setWiderrufOk] = useState(false)
+  const [selected, setSelected] = useState('3m')
+  const [loading, setLoading]   = useState(false)
+  const [error, setError]       = useState(null)
 
   useEffect(() => { pixelInitCheckout() }, [])
 
@@ -60,10 +60,6 @@ export default function Paywall({ answers, onLegal }) {
   const selectedPlan = PLANS.find(p => p.id === selected)
 
   const handleCheckout = async () => {
-    if (!widerrufOk) {
-      setError('Bitte bestätige zuerst die Zustimmung zur sofortigen Bereitstellung.')
-      return
-    }
     setLoading(true)
     setError(null)
     try {
@@ -203,23 +199,17 @@ export default function Paywall({ answers, onLegal }) {
               <span className="bg-green-100 text-green-700 text-sm font-bold px-3 py-1 rounded-full">{selectedPlan.badge}</span>
             )}
           </div>
-          {/* Pflicht-Zustimmung Widerrufsrecht */}
-          <label className="flex items-start gap-2 mb-2 cursor-pointer">
-            <input type="checkbox" checked={widerrufOk} onChange={e => setWiderrufOk(e.target.checked)}
-              className="mt-0.5 w-4 h-4 shrink-0 accent-brand-600" />
-            <span className="text-[11px] text-gray-500 leading-snug">
-              Ich stimme zu, dass die Bereitstellung meines digitalen Plans sofort nach Zahlung beginnt,
-              und nehme zur Kenntnis, dass ich damit mein{' '}
-              <span className="underline cursor-pointer" onClick={e => { e.preventDefault(); onLegal?.('widerruf') }}>Widerrufsrecht</span>{' '}
-              verliere (§ 356 Abs. 5 BGB).
-            </span>
-          </label>
           {error && <p className="text-red-500 text-xs mb-2 text-center">{error}</p>}
-          <button onClick={handleCheckout} disabled={loading || !widerrufOk}
+          <button onClick={handleCheckout} disabled={loading}
             className="w-full bg-brand-600 hover:bg-brand-700 active:scale-[0.98] disabled:opacity-60
                        text-white font-extrabold py-4 rounded-2xl text-lg transition-all shadow-lg">
             {loading ? '⏳ Weiterleitung…' : '🔓 Meinen persönlichen Plan freischalten'}
           </button>
+          <p className="text-[10px] text-gray-400 mt-1 leading-snug text-center">
+            Mit dem Kauf stimmst du der sofortigen Bereitstellung zu und nimmst zur Kenntnis, dass du dein{' '}
+            <span className="underline cursor-pointer" onClick={() => onLegal?.('widerruf')}>Widerrufsrecht</span>{' '}
+            verlierst (§ 356 Abs. 5 BGB).
+          </p>
           {/* Legal-Links – nur hier, nicht im Quiz */}
           <p className="text-center text-[11px] text-gray-400 mt-1.5 leading-snug">
             🔒 Einmalzahlung via Stripe ·{' '}
